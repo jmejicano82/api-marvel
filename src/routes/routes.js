@@ -8,12 +8,14 @@ const errorHandler = require("../util/errorHandler.service");
 
 const heroeGetAllRoute = require("../components/heroeGetAll/heroeGetAll.route");
 const heroeGetOneRoute = require("../components/heroeGetOne/heroeGetOne.route");
+const heroeTeamRoute = require("../components/heroeTeam/heroeTeam.route");
 
 function routes(app) {
   
   // Rutas para cada operación
   heroeGetAllRoute(app, globalPathPrefix);
   heroeGetOneRoute(app, globalPathPrefix);
+  heroeTeamRoute(app, globalPathPrefix);
 
   // Middleware para manejo de errores
   app.use(errorHandler);

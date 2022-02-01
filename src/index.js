@@ -8,8 +8,13 @@ const bodyParser = require("body-parser");
 const logger = require("@bech/logger").getStaticLogger();
 const config = require("./config/global");
 const { connection } = require("./config/database");
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors({
+  origin: '*'
+}));
 
 async function serverStart() {
   try {
